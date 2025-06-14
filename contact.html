@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+           
+            <img class="logo" src="images/logo.png" alt="ロゴ画像">
+
+            <nav id="nav">
+                <a class="navigation" href="">Application</a>
+                <a class="navigation" href="">Automation</a>
+                <a class="navigation" href="">Explorations</a>
+                <a class="navigation contact" href="">Contact</a>
+            </nav>
+
+            <!-- hanberger -->
+            <div class="hamburger" id="hamburger">
+                ☰
+            </div>
+
+
+        </header>
+        <main>
+            <div class="titlebox">
+                <p class="title"><span class="orange-word">お問い合わせ</span></p>
+                <h1><span class="orange-word">Contact</span></h1>
+            </div>
+            <div class="messageAndform">
+                <div class="start-message">
+                    <span class="orange-word">
+                        Webアプリケーションの作成・Excel作業の自動化支援などを行っています。<br>
+                        お気軽にお問い合わせください。
+                    </span>
+                </div>
+                <!-- formの送信先URLを指定する -->
+                <form action="" method="post">
+                    <p class="please">
+                        下記のフォームをご記入の上、<br>
+                        お問い合わせください。
+                    </p>
+                    <div class="form-group">
+                        <label for="company">貴社名</label>
+                        <input type="text" id="company" name="company" placeholder="例：株式会社○○商事">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="name">お名前<span class="required">必須</span></label>
+                        <input type="text" id="name" name="name" placeholder="例：山田花子" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mail">メールアドレス<span class="required">必須</span></label>
+                        <input type="text" id="mail" name="mail" placeholder="例：example@example.jp" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">電話番号</label>
+                        <input type="tel" id="phone" name="phone" placeholder="例：株式会社○○商事">
+                    </div>
+
+                    <div class="form-group">
+                        <label>お問い合わせ種類</label>
+                        <div class="checkbox-group">
+                            <label class="check">
+                                <input type="checkbox" name="webapp">
+                                <span>Webアプリケーションの作成</span>
+                            </label>
+                       
+                            <label class="check">
+                                <input type="checkbox" name="automation">
+                                <span>Excel作業の自動化</span>
+                            </label>
+                        
+                            <label class="check">
+                                <input type="checkbox" name="automation">
+                                <span>ポートフォリオの作成</span>
+                            </label>
+                        
+                            <label class="check">
+                                <input type="checkbox" name="etc">
+                                <span>その他</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">お問い合わせ内容<span class="required">必須</span></label>
+                        <textarea type="message" id="message" name="message" rows="10" required></textarea>
+                    </div>
+
+                    <div class="form-group privacy">
+                        <label>
+                            <input type="checkbox" name="privacy" required>
+                            <a href="">プライバシーポリシー</a>を確認・同意
+                        </label>
+                    </div>
+
+                    <div class="button-wrapper">
+                        <button type="submit">内容を送信</button>
+                    </div>
+                </form>
+
+            </div>
+        </main>
+        <footer>
+            <p class="copyright">&copy;2025 Shoya😊</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>   
+</body>
+</html>
