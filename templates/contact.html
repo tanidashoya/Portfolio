@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お問い合わせ</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../static/css/contact.css">
 </head>
 <body>
+    
     <div class="container">
         <header>
-           
-            <img class="logo" src="images/logo.png" alt="ロゴ画像">
-
+            <a href="{{url_for('home')}}">
+                <img class="logo" src="../static/images/logo.png" alt="ロゴ画像">
+            </a>
             <nav id="nav">
                 <a class="navigation" href="">Application</a>
                 <a class="navigation" href="">Automation</a>
@@ -113,6 +114,6 @@
             <p class="copyright">&copy;2025 Shoya😊</p>
         </footer>
     </div>
-    <script src="script.js"></script>   
+    <script src="../static/js/script.js"></script>   
 </body>
 </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.myfolio | Webアプリ・ポートフォリオ制作・Excel自動化の支援を行っています。</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <a href="{{url_for('home')}}">
+                <img class="logo" src="../static/images/logo.png" alt="ロゴ画像">
+            </a>
+
+            <nav id="nav">
+                <a class="navigation" href="">Application</a>
+                <a class="navigation" href="">Automation</a>
+                <a class="navigation" href="">Explorations</a>
+                <a class="navigation contact" href="{{url_for('contact')}}">Contact</a>
+            </nav>
+
+            <!-- hanberger -->
+            <div class="hamburger" id="hamburger">
+                ☰
+            </div>
+        </header>
+
+        <main>
+            <div class="titlebox">
+                <p class="title"><span class="gray-word">What I do</span></p>
+                <h1><span class="gray-word">Connect. Reframe. Empower.</span></h1>
+            </div>
+
+        </main>
+
+        <footer>
+
+            
+
+        </footer>
+    </div>
+
+</body>
+</html>
