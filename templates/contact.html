@@ -41,7 +41,7 @@
                     </span>
                 </div>
                 <!-- formの送信先URLを指定する -->
-                <form action="" method="post">
+                <form action="{{url_for('contact')}}" method="post">
                     <p class="please">
                         下記のフォームをご記入の上、<br>
                         お問い合わせください。
@@ -70,22 +70,22 @@
                         <label>お問い合わせ種類</label>
                         <div class="checkbox-group">
                             <label class="check">
-                                <input type="checkbox" name="webapp">
+                                <input type="checkbox" name="inquiry" value="Webアプリケーションの作成">
                                 <span>Webアプリケーションの作成</span>
                             </label>
                        
                             <label class="check">
-                                <input type="checkbox" name="automation">
+                                <input type="checkbox" name="inquiry" value="Excel作業の自動化">
                                 <span>Excel作業の自動化</span>
                             </label>
                         
                             <label class="check">
-                                <input type="checkbox" name="automation">
+                                <input type="checkbox" name="inquiry" value="ポートフォリオの作成">
                                 <span>ポートフォリオの作成</span>
                             </label>
                         
                             <label class="check">
-                                <input type="checkbox" name="etc">
+                                <input type="checkbox" name="inquiry" value="その他">
                                 <span>その他</span>
                             </label>
                         </div>
@@ -98,7 +98,7 @@
 
                     <div class="form-group privacy">
                         <label>
-                            <input type="checkbox" name="privacy" required>
+                            <input type="checkbox" name="privacy" value="OK" required>
                             <a href="">プライバシーポリシー</a>を確認・同意
                         </label>
                     </div>
