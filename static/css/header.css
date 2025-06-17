@@ -1,0 +1,138 @@
+header {
+    display:flex;
+    align-items: center;
+    padding-top: 45px;
+    padding-left: 45px;
+    padding-right: 40px;
+    justify-content: space-between;
+}
+
+
+nav {
+    display: flex;
+    margin-right:30px;
+    gap:30px;
+}
+
+
+/* AIによって出力したけどよくわからん→contactが行方向で中央にできた理由が */
+.navigation {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: rgb(77, 77, 77);
+    display: inline-flex;
+    align-items: center;
+    height: 45px;  /* ← 他と高さをそろえるため追加 */
+    font-weight: 380;
+}
+
+/* hanberger機能実装 */
+/* ここでは非表示にしておく */
+.hamburger {
+    display: none;
+    /* font-size: 28px;
+    cursor: pointer; */
+}
+
+.contact {
+    border: 1px solid rgb(77, 77, 77);
+    background-color: rgb(77, 77, 77);
+    border-radius: 9999px;  /* pill型 or 丸く */
+    padding: 0 16px;        /* 横だけにpadding */
+    height: 45px;           /* 他と高さを合わせる */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color:#ffffff;
+    font-weight: 450;
+}
+
+.logo {
+    width:180px;
+    height:auto;
+    margin-left: 35px;
+}
+
+@media(max-width: 1020px) {
+
+    .logo {
+        width:160px;
+        margin-left: 20px;
+    }
+
+    /* hanberger */
+    /* navをdisplay:none;にしてflex-direction:column;にして縦並びにしておく */
+    /* position: absolute; relativeを基準にして表示個所をきめる。ここではtop30px,right:0pxなので右上 */
+    nav {
+        /* display: none; */
+        flex-direction: column;
+        gap:20px;
+        align-items: center;
+        background: rgb(244,244,244,0.94);
+        /* position: absolute;
+        top: 30px;
+        right:0px;
+        width: 200px;
+        padding: 15px 40px;
+        border-radius: 8px; */
+        position: fixed;         /* 画面全体に貼り付ける */
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center; /* 中央寄せ（縦） */
+        padding: 0;
+        z-index: 999;
+
+        /* ふわっと出現させる */
+        /* 観ることもできず、触れもしない状態だがそこにある状態にしておく */
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease, visibility 0.4s ease;    /* 各変化を起こす変化時間を決める */
+    } 
+
+    .contact {
+        margin: 15px;
+    }
+
+    /* JavaScriptで .active クラスを追加されたときにメニューを表示。
+　flex-direction が設定されているので、縦並びで表示される。 */
+/* Javascriptでnavのdisplayをnoneからflexに変更している */
+    nav.active {
+        display: flex;
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        border:1px solid rgb(100, 100, 100);
+        padding:11px 16px;
+        border-radius: 9999px;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color:#fff;
+        background-color: rgb(100, 100, 100);
+        margin-right: 14px;
+    }
+}
+
+
+@media (max-width: 667px) {
+    header {
+        padding: 40px 20px 0px 20px;
+    }
+
+    .logo {
+        width: 130px;
+        margin-left: 5px;
+    }
+
+    .hamburger {
+        padding: 8px 14px;
+    }
+
+}

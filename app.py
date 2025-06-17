@@ -27,7 +27,7 @@ def contact():
     if request.method == "POST":
         company = request.form.get("company")
         name = request.form.get("name")
-        mail_address = request.form.get("mail")
+        mail_address = request.form["mail"]
         tel = request.form.get("tel")
         inquity = request.form.getlist("inquiry")
         message = request.form.get("message")
@@ -42,6 +42,24 @@ def contact():
         
         mail.send(admin_msg)
         
+        user_msg = Message(subject="お問い合わせありがとうございます。",
+                           sender=app.config["MAIL_USERNAME"],
+                           recipients=[mail_address]
+                           )
+        user_msg.body = f"""{name}様
+お問い合わせありがとうございます。
+以下の内容で受け付けました。
+
+---
+
+{message}
+
+---
+
+担当者より折り返しご連絡いたします。
+"""
+        
+        mail.send(user_msg)
         return redirect("/contact")
         
     return render_template("contact.html")

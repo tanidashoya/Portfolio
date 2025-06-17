@@ -1,0 +1,16 @@
+footer {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 55px;
+}
+
+.copyright {
+    font-size: .8rem;
+}
+
+@media(max-width: 1020px) {
+
+    footer {
+        padding: 40px 0 35px 0;
+    }
+}

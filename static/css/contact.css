@@ -1,67 +1,4 @@
-html {
-  overflow-y: scroll;
-}
 
-body {
-    font-size: 18px;
-    font-family: "Work Sans";
-    font-weight: 400;
-}
-
-header {
-    display:flex;
-    align-items: center;
-    padding-top: 45px;
-    padding-left: 45px;
-    padding-right: 40px;
-    justify-content: space-between;
-}
-
-
-nav {
-    display: flex;
-    margin-right:30px;
-    gap:30px;
-}
-
-
-/* AIによって出力したけどよくわからん→contactが行方向で中央にできた理由が */
-.navigation {
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: rgb(77, 77, 77);
-    display: inline-flex;
-    align-items: center;
-    height: 45px;  /* ← 他と高さをそろえるため追加 */
-    font-weight: 380;
-}
-
-/* hanberger機能実装 */
-/* ここでは非表示にしておく */
-.hamburger {
-    display: none;
-    /* font-size: 28px;
-    cursor: pointer; */
-}
-
-.contact {
-    border: 1px solid rgb(77, 77, 77);
-    background-color: rgb(77, 77, 77);
-    border-radius: 9999px;  /* pill型 or 丸く */
-    padding: 0 16px;        /* 横だけにpadding */
-    height: 45px;           /* 他と高さを合わせる */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color:#ffffff;
-    font-weight: 450;
-}
-
-.logo {
-    width:180px;
-    height:auto;
-    margin-left: 35px;
-}
 
 .orange-word {
     color: rgb(77, 77, 77);
@@ -182,15 +119,7 @@ button {
     margin-bottom: 30px;
 }
 
-footer {
-    text-align: center;
-    padding-top: 60px;
-    padding-bottom: 55px;
-}
 
-.copyright {
-    font-size: .8rem;
-}
 
 button:hover {
     background-color: rgb(110,110,110);
@@ -199,14 +128,7 @@ button:hover {
 
 @media(max-width: 1020px) {
 
-    body {
-        font-size: 16px;
-    }
 
-    .logo {
-        width:160px;
-        margin-left: 20px;
-    }
     form {
         margin:50px auto;
         width:75%;
@@ -222,46 +144,6 @@ button:hover {
         width:75%;
     }
 
-    /* hanberger */
-    /* navをdisplay:none;にしてflex-direction:column;にして縦並びにしておく */
-    /* position: absolute; relativeを基準にして表示個所をきめる。ここではtop30px,right:0pxなので右上 */
-    nav {
-        display: none;
-        flex-direction: column;
-        gap:20px;
-        align-items: center;
-        background: #f4f4f4;
-        position: absolute;
-        top: 30px;
-        right:0px;
-        width: 200px;
-        padding: 15px 40px;
-        border-radius: 8px;
-    } 
-
-    .contact {
-        margin: 15px;
-    }
-
-    /* JavaScriptで .active クラスを追加されたときにメニューを表示。
-　flex-direction が設定されているので、縦並びで表示される。 */
-/* Javascriptでnavのdisplayをnoneからflexに変更している */
-    nav.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: block;
-        cursor: pointer;
-        border:1px solid rgb(100, 100, 100);
-        padding:12px 18px;
-        border-radius: 9999px;
-        font-weight: bold;
-        font-size: 1.2rem;
-        color:#fff;
-        background-color: rgb(100, 100, 100);
-        margin-right: 14px;
-    }
 
     .title {
         font-size: 0.9rem;
@@ -285,29 +167,12 @@ button:hover {
         margin:40px 0 20px 0;
     }
 
-    footer {
-        padding: 40px 0 35px 0;
-    }
+
 }
 
 
 @media (max-width: 667px) {
-    body {
-        font-size: 15px;
-    }
-
-    header {
-        padding: 40px 20px 0px 20px;
-    }
-
-    .logo {
-        width: 130px;
-        margin-left: 5px;
-    }
-
-    .hamburger {
-        padding: 8px 14px;
-    }
+ 
     .title {
         margin-top: 100px;
     }

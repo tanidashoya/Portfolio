@@ -17,7 +17,6 @@ hamburger.addEventListener("click", () => {
   nav.classList.toggle("active");
 });
 
-
 // event.target：クリックされた場所のHTML要素
 // nav.contains(event.target)
 // → メニュー内がクリックされたかどうかを判定
@@ -34,6 +33,17 @@ document.addEventListener("click", (event) => {
     nav.classList.remove("active");
   }
 });
+
+document.addEventListener("click",(event) => {
+  const isClickNavigation = nav.contains(event.target);
+
+  if (isClickNavigation) {
+    nav.classList.remove("active")
+  }
+})
+
+
+
 
 
 /*
