@@ -1,79 +1,70 @@
-html {
-  overflow-y: scroll;
-}
-
-body {
-    font-size: 18px;
-    font-family: "Work Sans";
-    font-weight: 400;
-}
-
-header {
-    display:flex;
-    align-items: center;
-    padding-top: 45px;
-    padding-left: 45px;
-    padding-right: 40px;
-    justify-content: space-between;
-}
-
-
-nav {
-    display: flex;
-    margin-right:30px;
-    gap:30px;
-}
-
-
-/* AIによって出力したけどよくわからん→contactが行方向で中央にできた理由が */
-.navigation {
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: rgb(77, 77, 77);
-    display: inline-flex;
-    align-items: center;
-    height: 45px;  /* ← 他と高さをそろえるため追加 */
-    font-weight: 380;
-}
-
-/* hanberger機能実装 */
-/* ここでは非表示にしておく */
-.hamburger {
-    display: none;
-    /* font-size: 28px;
-    cursor: pointer; */
-}
-
-.contact {
-    border: 1px solid rgb(77, 77, 77);
-    background-color: rgb(77, 77, 77);
-    border-radius: 9999px;  /* pill型 or 丸く */
-    padding: 0 16px;        /* 横だけにpadding */
-    height: 45px;           /* 他と高さを合わせる */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color:#ffffff;
-    font-weight: 450;
-}
-
-.logo {
-    width:180px;
-    height:auto;
-    margin-left: 35px;
-}
-
 .titlebox {
-    text-align: left;
-    margin:120px auto;
+    display:flex;
+    text-align: center;
+    margin:200px auto;
     width:70%;
+    justify-content: center;
 }
 
 .title {
-    text-align: left;
+    white-space: nowrap;
+    font-size: clamp(1.0rem,4.0vw,4.0vw);
+    font-weight: 500;
+    color:rgb(48,48,48);
 }
 
-h1 {
-    margin-top:40px;
-    font-size: 3.6rem;
+.connect{
+    opacity:0;
+    transform: translateY(0px);
+    transition: opacity 1.6s ease-out,transform 1.2s ease-out;
 }
+
+.reframe {
+    opacity:0;
+    transform: translateY(0px);
+    transition: opacity 1.6s ease-out,transform 1.2s ease-out;
+}
+
+.empower {
+    opacity:0;
+    transform: translateY(0px);
+    transition: opacity 1.6s ease-out,transform 1.2s ease-out;
+}
+
+.connect.show {
+    opacity: 1;
+    transform: translateY(-20px);
+}
+
+.reframe.show {
+    opacity: 1;
+    transform: translateY(-20px);
+}
+
+.empower.show {
+    opacity: 1;
+    transform: translateY(-20px);
+}
+
+
+
+
+
+
+
+/*
+
+・結構使われる上からスライドふわっと
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+   */
