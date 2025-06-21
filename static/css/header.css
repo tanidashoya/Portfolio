@@ -68,7 +68,7 @@ nav {
         flex-direction: column;
         gap:20px;
         align-items: center;
-        background: rgb(244,244,244,0.94);
+        background: rgb(244,244,244,0.97);
         /* position: absolute;
         top: 30px;
         right:0px;
@@ -82,7 +82,7 @@ nav {
         height: 100vh;
         justify-content: center; /* 中央寄せ（縦） */
         padding: 0;
-        z-index: 999;
+        z-index: 9999;   /*ハンバーガーメニューで出したナビゲーションを一番上に持ってくる*/
 
         /* ふわっと出現させる */
         /* 観ることもできず、触れもしない状態だがそこにある状態にしておく */
@@ -134,5 +134,5 @@ nav {
     .hamburger {
         padding: 8px 14px;
     }
-
+    
 }

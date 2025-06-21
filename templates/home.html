@@ -11,31 +11,60 @@
     <link rel="stylesheet" href="../static/css/base.css">
 </head>
 <body>
-    
+        <!-- 画面全体を覆うようなナビゲーションウィンドウにする場合にはbody直下が安心 -->
+    <nav id="nav">
+        <a class="navigation" href="">Application</a>
+        <a class="navigation" href="">Portfolio</a>
+        <a class="navigation" href="">Automation</a>
+        <a class="navigation contact" href="{{url_for('contact')}}">Contact</a>
+    </nav>
     <div class="container">
         <header>
             <a href="{{url_for('home')}}">
                 <img class="logo" src="../static/images/logo.png" alt="ロゴ画像">
             </a>
 
-            <nav id="nav">
-                <a class="navigation" href="">Application</a>
-                <a class="navigation" href="">Automation</a>
-                <a class="navigation" href="">Explorations</a>
-                <a class="navigation contact" href="{{url_for('contact')}}">Contact</a>
-            </nav>
-
             <!-- hanberger -->
             <div class="hamburger" id="hamburger">
                 ☰
             </div>
         </header>
-
+        <div class="titlebox">
+            <h1 class="title connect">Connect．． </h1>
+            <h1 class="title reframe">Reframe．． </h1>
+            <h1 class="title empower">Empower．</h1>
+        </div>
         <main>
-            <div class="titlebox">
-                <h1 class="title connect">Connect．． </h1>
-                <h1 class="title reframe">Reframe．． </h1>
-                <h1 class="title empower">Empower．</h1>
+            <!-- connect,reframe,empowerについてをいれる -->
+            <div class="content-title">
+                <h2>Application</h2>
+            </div>
+            <div class="grid-application">
+                <div class="item">
+                    <a href="">  
+                        <img src="../static/images/application/history_game.png" alt="世界史選択クイズ">
+                    </a>
+                </div>
+                <div class="item">A</div>
+                <div class="item">A</div>
+            </div>
+            
+            <div class="content-title">
+                <h2>Portfolio</h2>
+            </div>
+            <div class="grid-application">
+                <div class="item">A</div>
+                <div class="item">A</div>
+                <div class="item">A</div>
+            </div>
+
+            <div class="content-title">
+                <h2>Automation</h2>
+            </div>
+            <div class="grid-application">
+                
+                <div class="item">A</div>
+                <div class="item">A</div>
             </div>
 
         </main>
