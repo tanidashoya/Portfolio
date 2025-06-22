@@ -15,40 +15,66 @@
 
 window.addEventListener('DOMContentLoaded', () => {
   
-  const connect = document.querySelector('.connect');
-  const reframe = document.querySelector('.reframe');
-  const empower = document.querySelector('.empower');
+  // const title = document.querySelector('.title');
+  // const reframe = document.querySelector('.reframe');
+  // const empower = document.querySelector('.empower');
+  const titleimg = document.querySelector('.title-img')
   const header = document.querySelector('header')
+  const main = document.querySelector('main')
 
     // 順番に時間差でクラス追加
     // setTimeoutは【第二引数に渡された時間が経過したのち、第一引数ののコードが実行される】
     // classList.add ⇒ 引数に渡したコードが追加される
     if (!sessionStorage.getItem('animationPlayed')){
-      setTimeout(() => {
-        connect.classList.add('show');
-      }, 800); // すぐ
+      // setTimeout(() => {
+      //   title.classList.add('show');
+      // }, 800); // すぐ
+
+      // setTimeout(() => {
+      //   reframe.classList.add('show');
+      // }, 2400); // 1.2秒後（connectが表示されてから）
+
+      // setTimeout(() => {
+      //   empower.classList.add('show');
+      // }, 4000); // さらに1.2秒後（reframeのあと）
 
       setTimeout(() => {
-        reframe.classList.add('show');
-      }, 2000); // 1.2秒後（connectが表示されてから）
-
-      setTimeout(() => {
-        empower.classList.add('show');
-      }, 3200); // さらに1.2秒後（reframeのあと）
+        titleimg.classList.add('show');
+      }, 3600);
 
       setTimeout(() => {
         header.classList.add('show')
-      },4800)
+      },6000)
+
+      setTimeout(() => {
+        main.classList.add('show')
+      },6000)
 
       sessionStorage.setItem('animationPlayed','true')
 
       // 2回目以降
     } else {
-      connect.classList.add('show');
-      reframe.classList.add('show');
-      empower.classList.add('show');
+      // title.classList.add('show');
+      // reframe.classList.add('show');
+      // empower.classList.add('show');
+      titleimg.classList.add('show');
       header.classList.add('show');
+      main.classList.add('show');
     }
+});
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  const title = document.querySelector('.title');
+  const text = title.textContent;  // 元の文字列を取得
+  title.textContent = '';          // 中身を一旦空に
+
+  [...text].forEach((char, index) => {
+    const span = document.createElement('span');
+    span.textContent = char;
+    span.style.animationDelay = `${index * 0.08}s`; // 1文字ごとに遅らせる
+    title.appendChild(span);
+  });
 });
 
 

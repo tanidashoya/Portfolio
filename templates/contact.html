@@ -12,10 +12,12 @@
     <link rel="stylesheet" href="../static/css/base.css">
 </head>
 <body>
+    <!-- 画面全体を覆うようなナビゲーションウィンドウにする場合にはbody直下が安心 -->
     <nav id="nav">
         <a class="navigation" href="">Application</a>
         <a class="navigation" href="">Automation</a>
         <a class="navigation" href="">Explorations</a>
+        <a class="navigation" href="">Blog</a>
         <a class="navigation contact" href="">Contact</a>
     </nav>
     <div class="container">
@@ -23,7 +25,13 @@
             <a href="{{url_for('home')}}">
                 <img class="logo" src="../static/images/logo.png" alt="ロゴ画像">
             </a>
-
+            <nav class="nav-header">
+                <a class="navigation" href="">Application</a>
+                <a class="navigation" href="">Portfolio</a>
+                <a class="navigation" href="">Automation</a>
+                <a class="navigation" href="">Blog</a>
+                <a class="navigation contact" href="{{url_for('contact')}}">Contact</a>
+            </nav>
             <!-- hanberger -->
             <div class="hamburger" id="hamburger">
                 ☰

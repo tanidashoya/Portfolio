@@ -1,29 +1,39 @@
 header {
     display:flex;
     align-items: center;
-    padding-top: 45px;
-    padding-left: 45px;
-    padding-right: 40px;
+    margin-top: 25px;
+    padding-left: 20px;
+    padding-right: 30px;
     justify-content: space-between;
+    height:60px;
 }
 
+/* ハンバーガー用ナビゲーション */
+#nav {
+    display: none;
+}
 
-nav {
+.nav-header {
     display: flex;
     margin-right:30px;
-    gap:30px;
+    gap:35px;
+    align-items: center;
 }
-
 
 /* AIによって出力したけどよくわからん→contactが行方向で中央にできた理由が */
 .navigation {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-decoration: none;
     color: rgb(77, 77, 77);
     display: inline-flex;
-    align-items: center;
-    height: 45px;  /* ← 他と高さをそろえるため追加 */
+    align-items: center;  /*navigationの中のテキストを縦中央に揃える*/
+    height: 60px;  
     font-weight: 380;
+}
+
+
+.navigation:hover {
+    text-decoration-line: underline;
 }
 
 /* hanberger機能実装 */
@@ -54,10 +64,16 @@ nav {
 }
 
 @media(max-width: 1020px) {
+    header {
+        /* height:55px; */
+        margin-top:15px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 
     .logo {
-        width:160px;
-        margin-left: 20px;
+        width:120px;
+        /* margin-left: 20px; */
     }
 
     /* hanberger */
@@ -118,21 +134,29 @@ nav {
         background-color: rgb(100, 100, 100);
         margin-right: 14px;
     }
+
 }
 
 
-@media (max-width: 667px) {
+@media (max-width: 768px) {
     header {
-        padding: 40px 20px 0px 20px;
+        /* height:55px; */
+        margin-top:15px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .logo {
+        width:100px;
     }
 
     .logo {
-        width: 130px;
-        margin-left: 5px;
+        width: 110px;
+        margin-left: 15px;
     }
 
     .hamburger {
-        padding: 8px 14px;
+        padding: 7px 12px;
+        margin:0;
     }
     
 }
