@@ -1,11 +1,12 @@
 header {
     display:flex;
     align-items: center;
-    margin-top: 25px;
-    padding-left: 20px;
-    padding-right: 30px;
+    margin-top: 2.0rem;
+    padding-left: 2.5rem;
+    padding-right: 1.4rem;
     justify-content: space-between;
-    height:60px;
+    height:auto;
+    width:100vw;
 }
 
 /* ハンバーガー用ナビゲーション */
@@ -16,7 +17,7 @@ header {
 .nav-header {
     display: flex;
     margin-right:30px;
-    gap:35px;
+    gap:2.7rem;
     align-items: center;
 }
 
@@ -58,21 +59,20 @@ header {
 }
 
 .logo {
-    width:160px;
+    /* width:160px; */
+    width:clamp(8.0rem,10.0rem,10.0rem);
     height:auto;
-    margin-left: 35px;
 }
 
 @media(max-width: 1020px) {
     header {
-        height:10rem;
-        margin-top: 1.5rem;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        margin-top: 3.2rem;
+        padding-left: 2.5rem;
+        padding-right: 2.2rem;
     }
 
     .logo {
-        width:10rem;
+        width:clamp(22.0vw,24.0vw,24.0vw);
         /* margin-left: 20px; */
     }
 
@@ -123,38 +123,33 @@ header {
     }
 
     .hamburger {
-        display: block;
+        display: flex;
         cursor: pointer;
         border:1px solid rgb(100, 100, 100);
-        padding:.9rem 1.2rem;
-        border-radius: 9999px;
+        width: clamp(40px, 10vw, 100px);     /* 幅は画面サイズでスケーリング */
+        height: clamp(40px, 10vw, 100px);    /* 高さも同じにして正円にする */
+        border-radius: 50%;
         font-weight: bold;
-        font-size: 1.2rem;
+        font-size: 3.5vw;
         color:#fff;
         background-color: rgb(100, 100, 100);
         margin-right: 14px;
+        align-items: center;
+        justify-content: center;
     }
 
 }
 
 
 @media (max-width: 768px) {
-    header {
-        height:10rem;
-        margin-top: 1.5rem;
-        padding-left: 0.8rem;
-        padding-right: 1.2rem;
-    }
-
-    .logo {
-        width:25rem;
-    }
-
-
 
     .hamburger {
-        padding: 2.0rem 2.6rem;
-        margin:0;
+        width: clamp(60px, 12vw, 150px);     /* 幅は画面サイズでスケーリング */
+        height: clamp(60px, 12vw, 150px);    /* 高さも同じにして正円にする */
     }
-    
+    .logo {
+        width:clamp(28.0vw,32.0vw,32.0vw);
+        
+    }
+
 }
