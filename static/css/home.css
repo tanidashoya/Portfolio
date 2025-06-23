@@ -15,11 +15,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 98%;
+  width: 70%;
   text-align: center;
   z-index: 10;
   isolation: isolate;
-  gap: 1rem;
 }
 
 
@@ -171,19 +170,20 @@ main.show{
     }
 }
 
-@media (max-width:768px) {
-    .titlebox{
-        width:100%;
-    }
-    .title-img {
-        margin-left:0rem;
-        height: clamp(1.0rem,7.0vw,7.0vw);
-    }
-    .title span{
-        font-size: clamp(1.0rem,5.0vw,5.0vw);
-        font-weight: 500;
-        color:rgb(48,48,48);
-    }
+@media (max-width: 768px){            /* ←ブレークポイントは好きに */
+  .titlebox{
+    padding: 0 1rem;                       /* 左右パディングをゼロに */
+    justify-content:space-between;    /* 端まで押し広げる */
+    gap:0;                            /* 画像を戻すなら調整してもOK */
+  }
+
+  .title{
+    flex:1 1 auto;                    /* 余った幅をそっくり取る */
+    display:block;                    /* 幅=100% を確実に */
+    margin:0;                         /* h1 の外余白を打ち消す */
+    font-size: clamp(1.2rem,10vw,8rem); /* 端いっぱい感を強調 */
+    letter-spacing:0;                 /* 広がりを邪魔する詰め字を解除 */
+  }
 }
 
 /*
