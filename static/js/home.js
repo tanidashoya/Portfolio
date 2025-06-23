@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // const title = document.querySelector('.title');
   // const reframe = document.querySelector('.reframe');
   // const empower = document.querySelector('.empower');
-  const titleimg = document.querySelector('.title-img')
+  // const titleimg = document.querySelector('.title-img')
   const header = document.querySelector('header')
   const main = document.querySelector('main')
 
@@ -38,9 +38,9 @@ window.addEventListener('DOMContentLoaded', () => {
       //   empower.classList.add('show');
       // }, 4000); // さらに1.2秒後（reframeのあと）
 
-      setTimeout(() => {
-        titleimg.classList.add('show');
-      }, 3600);
+      // setTimeout(() => {
+      //   titleimg.classList.add('show');
+      // }, 3600);
 
       setTimeout(() => {
         header.classList.add('show')
@@ -57,7 +57,7 @@ window.addEventListener('DOMContentLoaded', () => {
       // title.classList.add('show');
       // reframe.classList.add('show');
       // empower.classList.add('show');
-      titleimg.classList.add('show');
+      // titleimg.classList.add('show');
       header.classList.add('show');
       main.classList.add('show');
     }
