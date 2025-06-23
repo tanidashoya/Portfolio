@@ -163,6 +163,7 @@ main.show{
         font-size: clamp(1.0rem,5.0vw,5.0vw);
         font-weight: 500;
         color:rgb(48,48,48);
+        letter-spacing: 0px;
     }
     main {
         margin:-45px;
