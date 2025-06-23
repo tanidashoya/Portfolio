@@ -155,10 +155,6 @@ main.show{
     .titlebox{
         width:100%;
     }
-    .title-img {
-        margin-left:0rem;
-        height: clamp(1.0rem,7.0vw,7.0vw);
-    }
     .title span{
         font-size: clamp(1.0rem,5.0vw,5.0vw);
         font-weight: 500;
@@ -183,11 +179,11 @@ main.show{
     flex:1 1 auto;                    /* 余った幅をそっくり取る */
     display:block;                    /* 幅=100% を確実に */
     margin:0;                         /* h1 の外余白を打ち消す */
-    font-size: clamp(0.8rem,11vw,8rem); /* 端いっぱい感を強調 */
+    font-size: clamp(0.8rem,6vw,8rem); /* 端いっぱい感を強調 */
     letter-spacing:0;                 /* 広がりを邪魔する詰め字を解除 */
   }
     .title span{
-        font-size: clamp(0.8rem,10vw,8rem);
+        font-size: clamp(0.8rem,6vw,8rem);
         font-weight: 500;
         color:rgb(48,48,48);
         letter-spacing: 0px;
