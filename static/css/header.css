@@ -72,7 +72,7 @@ header {
     }
 
     .logo {
-        width:clamp(22.0vw,24.0vw,24.0vw);
+        width:clamp(16.0vw,20.0vw,20.0vw);
         /* margin-left: 20px; */
     }
 

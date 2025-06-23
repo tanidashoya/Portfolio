@@ -96,7 +96,7 @@ header.show{
 }
 
 main {
-    margin:-50px;
+    margin-top:-50px;
     opacity: 0;
     transform: translateY(50px);    /*下に50pxずらす*/
     transition: opacity 1.0s ,transform 1.0s ease-out;
