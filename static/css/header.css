@@ -71,6 +71,10 @@ header {
         padding-right: 2.2rem;
     }
 
+    .nav-header {
+        display: none;
+    }
+    
     .logo {
         width:clamp(16.0vw,20.0vw,20.0vw);
         /* margin-left: 20px; */

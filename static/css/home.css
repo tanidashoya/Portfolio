@@ -65,7 +65,7 @@
     font-weight: bold;
     color: #fff;
     letter-spacing: -2px;
-    color: #a0a0a0;            /* 初期：薄いグレー */
+    color: rgb(48,48,48);            /* 初期：薄いグレー */
     opacity: 0.2;                /* 初期：非表示 */
     display: inline-block;
     animation: showOne 0.6s steps(1, end) forwards;
@@ -166,24 +166,32 @@ main.show{
         letter-spacing: 0px;
     }
     main {
-        margin:-45px;
+        margin-top:-45px;
     }
 }
 
 @media (max-width: 768px){            /* ←ブレークポイントは好きに */
   .titlebox{
-    padding: 0 1rem;                       /* 左右パディングをゼロに */
-    justify-content:space-between;    /* 端まで押し広げる */
+    width:100%;
+    padding: 0 .5rem;                       /* 左右パディングをゼロに */
+    justify-content:center;    /* 中央に */
     gap:0;                            /* 画像を戻すなら調整してもOK */
   }
 
   .title{
+    width:100%;
     flex:1 1 auto;                    /* 余った幅をそっくり取る */
     display:block;                    /* 幅=100% を確実に */
     margin:0;                         /* h1 の外余白を打ち消す */
-    font-size: clamp(1.2rem,10vw,8rem); /* 端いっぱい感を強調 */
+    font-size: clamp(1.4rem,11vw,8rem); /* 端いっぱい感を強調 */
     letter-spacing:0;                 /* 広がりを邪魔する詰め字を解除 */
   }
+    .title span{
+        font-size: clamp(1.2rem,10vw,8rem);
+        font-weight: 500;
+        color:rgb(48,48,48);
+        letter-spacing: 0px;
+    }
 }
 
 /*
