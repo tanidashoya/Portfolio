@@ -65,7 +65,7 @@ header {
 
 @media(max-width: 1020px) {
     header {
-        /* height:55px; */
+        height:10rem;
         margin-top: 1.5rem;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
@@ -140,7 +140,7 @@ header {
 
 @media (max-width: 768px) {
     header {
-        /* height:55px; */
+        height:10rem;
         margin-top: 1.5rem;
         padding-left: 0.8rem;
         padding-right: 1.2rem;
