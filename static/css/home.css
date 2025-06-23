@@ -176,7 +176,7 @@ main.show{
         margin-left:0rem;
     }
     .title span{
-        font-size: clamp(1.0rem,5.2vw,5.2vw);
+        font-size: clamp(1.0rem,6.0vw,6.0vw);
         font-weight: 500;
         color:rgb(48,48,48);
     }
