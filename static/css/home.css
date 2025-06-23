@@ -159,7 +159,7 @@ main.show{
         margin-left:0rem;
     }
     .title span{
-        font-size: clamp(1.0rem,4.5vw,4.5vw);
+        font-size: clamp(1.0rem,5.0vw,5.0vw);
         font-weight: 500;
         color:rgb(48,48,48);
     }
@@ -176,7 +176,7 @@ main.show{
         margin-left:0rem;
     }
     .title span{
-        font-size: clamp(1.0rem,4.2vw,4.2vw);
+        font-size: clamp(1.0rem,5.2vw,5.2vw);
         font-weight: 500;
         color:rgb(48,48,48);
     }
