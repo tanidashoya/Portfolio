@@ -171,6 +171,9 @@ main.show{
         color:rgb(48,48,48);
         letter-spacing: 0px;
     }
+    .title-img {
+        width:clamp(20.0vw,25vw,30vw);
+    }
     main {
         margin-top:-45px;
     }
@@ -197,6 +200,9 @@ main.show{
         font-weight: 500;
         color:rgb(48,48,48);
         letter-spacing: 0px;
+    }
+    .title-img {
+        width:clamp(20.0vw,40vw,40vw);
     }
 }
 
