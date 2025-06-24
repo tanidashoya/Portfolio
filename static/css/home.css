@@ -27,26 +27,6 @@
   color: #fff;
 }
 
-/* 🔹 vertical-align: middle;
-行内要素として画像が**文字と同じ高さ（中段）**に揃うようにします。
-画像と文字が横並びのときに、縦方向の見た目を整えるのに使います。 */
-
-.title-img {
-    position: relative;
-    height: clamp(1.0rem,6.5vw,6.5vw);  /*高さをレスポンシブに*/
-    width: auto;
-    animation: spin 8s linear infinite;
-    margin-left: 1.0rem;
-    vertical-align: middle; /* テキストと縦位置を揃える */
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 1.6s ease-out;
-}
-
-.title-img.show {
-    opacity: 1;
-}
-
 /* これは spin という名前のアニメーションで、
 「100%の時点で rotate(360deg) ＝ 1回転している」状態になる、という意味。
 自動的に 0%はrotate(0deg) と見なされて、
@@ -62,26 +42,56 @@
 .title span {
     white-space: nowrap;
     font-size: clamp(1.0rem,4.0vw,4.0vw);
-    font-weight: bold;
+    font-weight: 500;
     color: #fff;
     letter-spacing: -2px;
     color: rgb(48,48,48);            /* 初期：薄いグレー */
-    opacity: 0.2;                /* 初期：非表示 */
+    opacity: 0;                /* 初期：非表示 */
     display: inline-block;
     animation: showOne 0.6s steps(1, end) forwards;
+    transition: opacity 1.5s ease;
 }
+
 
 @keyframes showOne {
   to {
     opacity: 1;
     font-weight: 500;
-    color: #6d6d6d;         /* 最終：濃いグレー（ほぼ黒） */
+    color: rgb(80,80,80);         /* 最終：濃いグレー（ほぼ黒） */
   }
 }
 
+/* forwards指定により完了後もアニメーションstyleとして残り続けるので
+animationのopacityが残り続ける（最優先レイヤーで上書き不可）のでanmationをnoneにする */
+.title span.cover{
+  opacity: 0;
+}
 
 
+.title-img {
+    position: absolute;  
+    /* ↓だけでは要素の左上端が中央になっている */
+    top: 50%;
+    left: 50%;
+    /* ↓要素自身の幅・高さの50%分、左と上にズラす */
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    width:clamp(5.0vw,18vw,22vw);
+    height: auto;
+    opacity:0;
+    animation:spin 12s linear infinite;
+    transition: opacity 2.0s ease;
+}
 
+.title-img.show {
+  opacity:0.88;
+}
+
+/* ↓アニメーション */
+@keyframes spin {
+  0%   { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
 
 header {
     opacity: 0;
