@@ -201,7 +201,7 @@ main.show{
         letter-spacing: 0px;
     }
     .title-img {
-        width:clamp(40.0vw,50vw,55vw);
+        width:clamp(40.0vw,55vw,60vw);
     }
 }
 

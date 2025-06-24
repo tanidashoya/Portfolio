@@ -146,13 +146,18 @@ header {
 
 
 @media (max-width: 768px) {
+    header {
+        margin-top: 2.0rem;
+        padding-left: 2.2rem;
+        padding-right: 2.0rem;
+    }
 
     .hamburger {
         width: clamp(60px, 12vw, 150px);     /* 幅は画面サイズでスケーリング */
         height: clamp(60px, 12vw, 150px);    /* 高さも同じにして正円にする */
     }
     .logo {
-        width:clamp(28.0vw,32.0vw,32.0vw);
+        width:clamp(28.0vw,35.0vw,35.0vw);
         
     }
 
