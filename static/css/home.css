@@ -1,4 +1,6 @@
 /* position:relative 子要素の基準点として使われる*/
+/* overflow: hidden;はみ出した子要素を非表示にする */
+/* 切れる場合はメディアクエリで対応しようかな */
 .title-area {
   position: relative;
   width: 100%;
@@ -6,52 +8,53 @@
   overflow: hidden;
 }
 
+/* 絶対位置で中心に */
 .titlebox {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
   width: 70%;
   text-align: center;
   z-index: 10;
-  isolation: isolate;
+  /* isolation: isolate; */
 }
 
-
+/* white-space: nowrap; 要素内のテキストを強制的に1行にする */
 .title {
   white-space: nowrap;
   color: #fff;
+  /* opacity: 0; */
 }
 
-/* これは spin という名前のアニメーションで、
-「100%の時点で rotate(360deg) ＝ 1回転している」状態になる、という意味。
-自動的に 0%はrotate(0deg) と見なされて、
-→ 0deg → 360deg を滑らかに回転する動きになります。 */
-/* @keyframesはcssアニメーションの中でどのように動くかを定義 */
-/* @keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
-} */
 
 
+/* javascritで操作して変化させる */
+/* display:inline-block; */
+/* インラインのようにテキストの流れに沿いながらも、ブロック要素のようにサイズ・アニメーションを細かく制御できる */
+/* animation: アニメーション名 時間 間隔指定（steps） 再生方向; */
+/* 間隔指定：steps(1, end); 1段階で最後にジャンプ（"end"）
+➜ つまり「一瞬で変化させる」という意味。*/
+/* forwards
+➡ アニメーション完了後に、最終状態（opacity:1 など）をそのまま保持します。
+もし forwards がなければ、アニメーション完了後にまた opacity:0 に戻ってしまうので、意味がなくなる。 */
 .title span {
     white-space: nowrap;
     font-size: clamp(1.0rem,4.0vw,4.0vw);
     font-weight: 500;
-    color: #fff;
     letter-spacing: -2px;
     color: rgb(48,48,48);            /* 初期：薄いグレー */
-    opacity: 0;                /* 初期：非表示 */
+    opacity: 0.1;                /* 初期：非表示 */
     display: inline-block;
     animation: showOne 0.6s steps(1, end) forwards;
     transition: opacity 1.5s ease;
 }
 
 
+/* アニメーションが発動するとopacity:1;より文字が現れる */
 @keyframes showOne {
   to {
     opacity: 1;
