@@ -45,7 +45,6 @@ document.addEventListener("click",(event) => {
 
 
 
-
 /*
 ✅ ステップ①：要素の取得
 js

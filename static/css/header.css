@@ -83,7 +83,7 @@ header {
     /* hanberger */
     /* navをdisplay:none;にしてflex-direction:column;にして縦並びにしておく */
     /* position: absolute; relativeを基準にして表示個所をきめる。ここではtop30px,right:0pxなので右上 */
-    nav {
+    #nav {
         /* display: none; */
         flex-direction: column;
         gap:20px;
@@ -119,7 +119,7 @@ header {
     /* JavaScriptで .active クラスを追加されたときにメニューを表示。
 　flex-direction が設定されているので、縦並びで表示される。 */
 /* Javascriptでnavのdisplayをnoneからflexに変更している */
-    nav.active {
+    #nav.active {
         display: flex;
         visibility: visible;
         opacity: 1;
@@ -146,6 +146,25 @@ header {
 
 
 @media (max-width: 768px) {
+    header {
+        margin-top: 2.0rem;
+        padding-left: 2.2rem;
+        padding-right: 2.0rem;
+    }
+
+
+    .hamburger {
+        width: clamp(60px, 8vw, 150px);     /* 幅は画面サイズでスケーリング */
+        height: clamp(60px, 8vw, 150px);    /* 高さも同じにして正円にする */
+    }
+    .logo {
+        width:clamp(20.0vw,24.0vw,24.0vw);
+        
+    }
+
+}
+
+@media (max-width: 550px) {
     header {
         margin-top: 2.0rem;
         padding-left: 2.2rem;
