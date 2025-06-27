@@ -53,7 +53,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
   /* ──────────── ③ 文字をフェードアウト → 他要素を順次表示 ──────────── */
-
+  // 4秒後にタイトルの文字（現在は.title spanとなっている）をフェードアウトする。
+  // setTimeout(アロー関数, 4000)：4秒後に処理開始
+  // querySelectorAll：指定したCSSセレクタに一致する要素を「全部」取得
+  // querySelectorAll が返すのはほぼ配列だけど、厳密には「NodeList」（イテラブル）foEachを使えるがmap()やfilter()では変換が必要
+  //アロー関数は引数が一つだけなら()を省略できる。spans.forEach(s => {処理})
   setTimeout(() => {
     const spans = document.querySelectorAll('.title span');
 
@@ -64,11 +68,11 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     // 次フレームで opacity 0 → transition が発火してふわっと消える
+    // 2フレーム遅らせて確実に再描画を挟んでからCSSの変更を適用させる(transitionを設定してふわっと消す)
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         spans.forEach(s => {
           s.style.opacity = '0';
-          s.classList.add('cover');
         });
       });
     });
@@ -79,5 +83,6 @@ window.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => main.classList.add('show'),     7500);
 
   /* ──────────── ④ フラグを保存 ──────────── */
+  //sessionを保存して2回目以降のアクセス時にはアニメーションが作動しないようにしている
   sessionStorage.setItem('animationPlayed', 'true');
 });
