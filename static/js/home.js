@@ -51,7 +51,13 @@
 
 
 
-
+// window.addEventListener('DOMContentLoaded',() => {})
+// window:「ブラウザのウィンドウ全体」＝最上位のグローバルオブジェクト 
+// element.addEventListener(イベント名, 関数);
+// ↑あるHTML要素（element）に対して、特定のイベントが起きたときに指定した関数（＝処理）を実行する、という命令です
+// DOMContentLoaded ⇒ HTMLの読み込みが完了した時点で中の処理を実行する
+// アロー関数：(引数) => {処理内容}
+// document.querySelector('要素')⇒JavaScriptから操作するためにHTMLの要素を取得
 window.addEventListener('DOMContentLoaded', () => {
   const header   = document.querySelector('header');
   const titleBox = document.querySelector('.title');           // <h1 class="title">
