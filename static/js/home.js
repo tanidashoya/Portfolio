@@ -1,55 +1,3 @@
-/* ========== home.js : 1 回目だけタイトルを出現 → フェードアウト ========= */
-
-/* ========== home.js 完成版 ========== */
-// window.addEventListener('DOMContentLoaded', () => {
-//   const header   = document.querySelector('header');
-//   const titleH1  = document.querySelector('.title');      // <h1 class="title">
-//   const titleImg = document.querySelector('.title-img');
-//   const main     = document.querySelector('main');
-
-//   /* ── 再訪問ならタイトルを最初から非表示 ─────────────────── */
-//   if (sessionStorage.getItem('animationPlayed')) {
-//     titleH1.style.display = 'none';
-//     header.classList.add('show');
-//     titleImg.classList.add('show');
-//     main.classList.add('show');
-//     return;
-//   }
-
-//   /* ── ① タイトル文字を <span> に分割して出現アニメ ───────── */
-//   const text = titleH1.textContent.trim();
-//   titleH1.textContent = '';
-
-//   [...text].forEach((ch, i) => {
-//     const span = document.createElement('span');
-//     span.textContent          = ch;
-//     span.style.animationDelay = `${i * 0.08}s`;   // 0.08s 刻み
-//     titleH1.appendChild(span);
-//   });
-
-//   /* ── ② 全文字が出終わったあと 1.5s でフェードアウト ─────── */
-//   const lastDelay = (text.length - 1) * 0.08 + 0.6 + 0.2; // 秒
-//   setTimeout(() => {
-//     const spans = document.querySelectorAll('.title span');
-
-//     /* forwards レイヤーを解除 */
-//     spans.forEach(s => {
-//       s.style.animation = 'none';  // アニメ‐レイヤーを外す
-//       s.offsetWidth;               // ★強制 reflow（1フレーム確保）
-//       s.style.opacity = '0';       // transition が必ず発火
-//     });
-//   }, lastDelay * 1000);
-
-//   /* ── ③ 画像・ヘッダー・main を順次表示 ───────────────── */
-//   setTimeout(() => titleImg.classList.add('show'), 4000);
-//   setTimeout(() => header.classList.add('show'),   7000);
-//   setTimeout(() => main.classList.add('show'),     7000);
-
-//   /* ── ④ フラグ保存：次回はタイトル生成しない ─────────────── */
-//   sessionStorage.setItem('animationPlayed', 'true');
-// });
-
-
 
 // window.addEventListener('DOMContentLoaded',() => {})
 // window:「ブラウザのウィンドウ全体」＝最上位のグローバルオブジェクト 
@@ -65,16 +13,35 @@ window.addEventListener('DOMContentLoaded', () => {
   const main     = document.querySelector('main');
 
   /* ──────────── ① 2 回目以降は最初から非表示 ──────────── */
+  // sessionStorage.getItem('animationPlayed')
+  // sessionStorage:今のタブで開いている間だけ有効な保存場所
+  // .getItem('animationPlayed'):以前このページで「アニメーションしたよ」のsessionが記録されているかを確認している
   if (sessionStorage.getItem('animationPlayed')) {
     titleBox.style.display = 'none';        // タイトルごと消す
-    header.classList.add('show');
-    titleImg.classList.add('show');
-    main.classList.add('show');
-    return;                                 // ここで処理終了
+    header.classList.add('show');           //headerに.showを加える。(headerを出現させる)
+    titleImg.classList.add('show');         //title-imgを出現させる
+    main.classList.add('show');             //mainを出現させる
+    return;                                 // ここで処理終了。これより下の関数処理にはいかない
   }
 
-  /* ──────────── ② 初回だけタイトルを <span> 分割して表示 ──────────── */
-  const originalText = titleBox.textContent;
+
+  /* ──────────── ② 初回だけタイトルを <span> 分割して順番にアニメーションをかける準備 ──────────── */
+  // ここでのtitleboxはh1要素の.titleクラスである。直接Connect..Reframe..Empowerが書かれている要素である
+  //[...originalText]:文字列を1文字ずつ分解して配列（）リストにする書き方。例：["こ","ん","に","ち","は"]
+  // 配列.forEach((char, i) => { ... })：配列の中身の文字を一文字ずつ取り出して処理する。処理内容はアロー関数で記述
+  //document.createElement('span')：HTMLの<span>タグをjavascriptで生成する
+  //ここでのcharは文字（1文字）で i は char の配列におけるインデックス
+  // span.style.animationDelay：CSSのアニメーションの遅延時間をJavascriptから設定している（JSはdelayだけ設定し、アニメーション自体はCSSに任せている）
+  //titlebox.appendChild(span)：作ったspan要素をtitlebox(クラス名.titleのh1要素)に追加する
+  //   <h1 class="title">
+  //     <span style="animation-delay: 0s">こ</span>
+  //     <span style="animation-delay: 0.08s">ん</span>
+  //     <span style="animation-delay: 0.16s">に</span>
+  //     <span style="animation-delay: 0.24s">ち</span>
+  //     <span style="animation-delay: 0.32s">は</span>
+  //   </h1>/
+  // スクリプトが読み込まれて上記のように分解されてspanが追加されてCSSのanimationが順次実行されていく。
+  const originalText = titleBox.textContent; //変数に.titleの文字列を格納
   titleBox.textContent = '';                // いったん空に
 
   [...originalText].forEach((char, i) => {
@@ -84,7 +51,9 @@ window.addEventListener('DOMContentLoaded', () => {
     titleBox.appendChild(span);
   });
 
+
   /* ──────────── ③ 文字をフェードアウト → 他要素を順次表示 ──────────── */
+
   setTimeout(() => {
     const spans = document.querySelectorAll('.title span');
 
@@ -96,13 +65,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // 次フレームで opacity 0 → transition が発火してふわっと消える
     requestAnimationFrame(() => {
-      spans.forEach(s => (s.style.opacity = '0'));
+      requestAnimationFrame(() => {
+        spans.forEach(s => {
+          s.style.opacity = '0';
+          s.classList.add('cover');
+        });
+      });
     });
   }, 4000);
 
-  setTimeout(() => titleImg.classList.add('show'), 4000);
-  setTimeout(() => header.classList.add('show'),   7000);
-  setTimeout(() => main.classList.add('show'),     7000);
+  setTimeout(() => titleImg.classList.add('show'), 4200);
+  setTimeout(() => header.classList.add('show'),   7500);
+  setTimeout(() => main.classList.add('show'),     7500);
 
   /* ──────────── ④ フラグを保存 ──────────── */
   sessionStorage.setItem('animationPlayed', 'true');
