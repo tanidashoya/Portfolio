@@ -112,6 +112,20 @@ header.show{
     transform:translateY(0px)
 }
 
+.hamburger {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50px);
+    transition: opacity 1.0s ,transform 1.0s ease-out;
+}
+
+.hamburger.show{
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform:translateY(0px)
+}
 
 /* メイン部分の出現を定義 */
 main {

@@ -39,7 +39,8 @@ header {
 
 /* hanberger機能実装 */
 /* ここでは非表示にしておく */
-.hamburger {
+.hamburger, 
+.close{
     display: none;
     /* font-size: 28px;
     cursor: pointer; */
@@ -75,6 +76,7 @@ header {
         display: none;
     }
     
+
     .logo {
         width:clamp(16.0vw,20.0vw,20.0vw);
         /* margin-left: 20px; */
@@ -102,7 +104,7 @@ header {
         height: 100vh;
         justify-content: center; /* 中央寄せ（縦） */
         padding: 0;
-        z-index: 9999;   /*ハンバーガーメニューで出したナビゲーションを一番上に持ってくる*/
+        z-index: 100;   /*ハンバーガーメニューで出したナビゲーションを一番上に持ってくる*/
 
         /* ふわっと出現させる */
         /* 観ることもできず、触れもしない状態だがそこにある状態にしておく */
@@ -127,20 +129,48 @@ header {
     }
 
     .hamburger {
-        display: flex;
-        cursor: pointer;
-        border:1px solid rgb(100, 100, 100);
-        width: clamp(40px, 10vw, 100px);     /* 幅は画面サイズでスケーリング */
-        height: clamp(40px, 10vw, 100px);    /* 高さも同じにして正円にする */
+        position: absolute;
+        top: clamp(0.8rem, 5vw, 1.6rem);
+        right: 2.6rem;
+        z-index: 10; /* navより下でOK */
+        width: clamp(2vw, 8vw, 12vw);
+        height: clamp(2vw, 8vw, 12vw);
         border-radius: 50%;
-        font-weight: bold;
-        font-size: 3.5vw;
-        color:#fff;
-        background-color: rgb(100, 100, 100);
-        margin-right: 14px;
-        align-items: center;
+        background: rgb(100, 100, 100);
+        color: white;
+        font-size: 2rem;
         justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        display: flex;
     }
+
+
+    .close {
+        position: fixed;
+        top: clamp(0.8rem, 5vw, 1.6rem);
+        right: 2.6rem;
+        z-index: 9999;
+        width: clamp(2vw, 8vw, 12vw);
+        height: clamp(2vw, 8vw, 12vw);
+        border-radius: 50%;
+        background: rgb(100, 100, 100);
+        color: white;
+        font-size: 2rem;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        display: none;
+    }
+
+    .close.active {
+        display: flex;
+    }
+
+    .hamburger.active {
+        display: none;
+    }
+
 
 }
 
@@ -153,7 +183,8 @@ header {
     }
 
 
-    .hamburger {
+    .hamburger,
+    .close {
         width: clamp(60px, 8vw, 150px);     /* 幅は画面サイズでスケーリング */
         height: clamp(60px, 8vw, 150px);    /* 高さも同じにして正円にする */
     }
@@ -171,7 +202,8 @@ header {
         padding-right: 2.0rem;
     }
 
-    .hamburger {
+    .hamburger
+    .close {
         width: clamp(60px, 12vw, 150px);     /* 幅は画面サイズでスケーリング */
         height: clamp(60px, 12vw, 150px);    /* 高さも同じにして正円にする */
     }

@@ -183,7 +183,7 @@ button:hover {
 
     .start-message,
     .titlebox {
-        width:85%;
+        width:92%;
     }
 
     .messageAndform {
@@ -192,9 +192,9 @@ button:hover {
     }
 
     form {
-        margin:50px auto 30px auto;
-        width:85%;
-        padding: 30px 30px 20px 30px;
+        /* margin:50px auto 30px auto; */
+        width:92%;
+        padding: 30px 15px 20px 15px;
     }
 
 }

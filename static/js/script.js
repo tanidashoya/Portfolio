@@ -6,6 +6,7 @@
 // "nav" → <nav> タグを取得（今回はメニュー）
 const hamburger = document.querySelector(".hamburger");
 const nav = document.querySelector("nav");
+const close = document.querySelector(".close");
 
 
 //.addEventListener("click", () => {...})
@@ -15,8 +16,15 @@ const nav = document.querySelector("nav");
 // 🔄 この結果、CSSの nav.active { display: flex; } が効く＝メニューが表示される
 hamburger.addEventListener("click", () => {
   nav.classList.toggle("active");
+  close.classList.toggle("active");
+  hamburger.classList.toggle("active");
 });
 
+close.addEventListener("click", () => {
+  nav.classList.toggle("active");
+  close.classList.toggle("active");
+  hamburger.classList.toggle("active");
+});
 // event.target：クリックされた場所のHTML要素
 // nav.contains(event.target)
 // → メニュー内がクリックされたかどうかを判定
@@ -26,21 +34,13 @@ hamburger.addEventListener("click", () => {
 // 👆 これで「外をクリックしたらメニューを閉じる」UIが実現
 
 document.addEventListener("click", (event) => {
-  const isClickInsideMenu = nav.contains(event.target);
-  const isClickOnHamburger = hamburger.contains(event.target);
+  const isClickClose = close.contains(event.target);
 
-  if (!isClickInsideMenu && !isClickOnHamburger) {
+  if (isClickClose) {
     nav.classList.remove("active");
   }
 });
 
-document.addEventListener("click",(event) => {
-  const isClickNavigation = nav.contains(event.target);
-
-  if (isClickNavigation) {
-    nav.classList.remove("active")
-  }
-})
 
 
 

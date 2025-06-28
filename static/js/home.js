@@ -11,6 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const titleBox = document.querySelector('.title');           // <h1 class="title">
   const titleImg = document.querySelector('.title-img');
   const main     = document.querySelector('main');
+  const hamburger = document.querySelector('.hamburger');
 
   /* ──────────── ① 2 回目以降は最初から非表示 ──────────── */
   // sessionStorage.getItem('animationPlayed')
@@ -20,7 +21,8 @@ window.addEventListener('DOMContentLoaded', () => {
     titleBox.style.display = 'none';        // タイトルごと消す
     header.classList.add('show');           //headerに.showを加える。(headerを出現させる)
     titleImg.classList.add('show');         //title-imgを出現させる
-    main.classList.add('show');             //mainを出現させる
+    main.classList.add('show');
+    hamburger.classList.add('show')             //mainを出現させる
     return;                                 // ここで処理終了。これより下の関数処理にはいかない
   }
 
@@ -80,6 +82,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   setTimeout(() => titleImg.classList.add('show'), 4200);
   setTimeout(() => header.classList.add('show'),   7500);
+  setTimeout(() => hamburger.classList.add('show'),   7500);
   setTimeout(() => main.classList.add('show'),     7500);
 
   /* ──────────── ④ フラグを保存 ──────────── */
