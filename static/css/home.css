@@ -245,6 +245,10 @@ main.show{
 
 
 @media (max-width: 550px){            /* ←ブレークポイントは好きに */
+    
+    .title-area {
+      height: calc(100vh - 170px);
+    }
     .title-img {
         width:clamp(40.0vw,55vw,60vw);
     }
