@@ -129,13 +129,13 @@ header.show{
 
 /* メイン部分の出現を定義 */
 main {
-    /* margin-top:-50px; */
     opacity: 0;
     transform: translateY(50px);    /*下に50pxずらす*/
     transition: opacity 1.0s ,transform 1.0s ease-out;
 }
 
 main.show{
+    margin-top:60px;
     opacity:1;
     transform:translateY(0px)   /*ずらしを解消する*/
 }
@@ -233,7 +233,7 @@ main.show{
     /* letter-spacing:0;                 広がりを邪魔する詰め字を解除 */
   }
   .title span{
-      font-size: clamp(0.8rem,5vw,8rem);
+      font-size: clamp(0.8rem,5vw,6.5rem);
       font-weight: 500;
       color:rgb(48,48,48);
       letter-spacing: 0px;
@@ -258,8 +258,12 @@ main.show{
         gap:20px;
     }
     .title span{
-      font-size: clamp(0.8rem,6vw,8rem);
+      font-size: clamp(0.8rem,5vw,6.5rem);
     }
+    main.show{
+      margin-top:100px;
+  }
+
 }
 
 /*
