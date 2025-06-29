@@ -111,7 +111,7 @@ header {
 header.show{
     opacity:1;
     transform:translateY(0px);
-    margin-bottom: 1.2rem;
+    /* margin-bottom: 1.2rem; */
 }
 
 .hamburger {
@@ -284,6 +284,7 @@ main.show{
     
     .title-area {
       height: calc(100vh - 170px);
+      background-color: #fff;
     }
     .title-img {
         width:clamp(40.0vw,55vw,60vw);
