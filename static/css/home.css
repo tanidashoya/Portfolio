@@ -4,8 +4,9 @@
 .title-area {
   position: relative;
   width: 100%;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 160px);
   overflow: hidden;
+  background-color: rgb(252,252,252);
 }
 
 /* 絶対位置で中心に */
@@ -15,8 +16,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   /* display: flex; */
-  /* justify-content: center;
-  align-items: center; */
+  justify-content: center;
+  align-items: center; 
   width: 70%;
   text-align: center;
   z-index: 10;
@@ -109,7 +110,8 @@ header {
 
 header.show{
     opacity:1;
-    transform:translateY(0px)
+    transform:translateY(0px);
+    margin-bottom: 1.2rem;
 }
 
 .hamburger {
@@ -135,7 +137,8 @@ main {
 }
 
 main.show{
-    margin-top:60px;
+    text-align: center;
+    margin:20px auto;
     opacity:1;
     transform:translateY(0px)   /*ずらしを解消する*/
 }
@@ -149,12 +152,37 @@ main.show{
     /* z-index: 1; */
 }
 
-.content-title {
+.content-title{
+  margin-bottom:5.0rem;
+  font-size: 2.8rem;
+  font-weight: 200;
+  font-family: 'Raleway', sans-serif;
+}
+
+.service,
+.works {
+  margin-top:100px;
+}
+
+
+.intro-contents {
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+  line-height: 50px;
+  font-weight: 300;
+}
+
+.intro-contents p {
+  margin-top:2.2rem;
+
+}
+
+.mini-title {
     margin-top: 80px;
     margin-bottom: 45px;
 }
 
-.content-title h3 {
+.mini-title h3 {
     text-align: center;
     font-size: 1.5rem;
     font-family: 'Raleway', sans-serif;
@@ -162,6 +190,14 @@ main.show{
     letter-spacing: 2.5px;
     color: #333;         
 }
+
+.service-contents {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:35px;
+  justify-content: center;
+}
+
 
 
 /* 各々の作ったものの紹介部分 */
@@ -266,6 +302,12 @@ main.show{
     }
     main.show{
       margin-top:100px;
+  }
+
+
+  .service-contents {
+    grid-template-columns: repeat(1,1fr);
+    gap:20px;
   }
 
 }
