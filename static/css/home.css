@@ -6,7 +6,7 @@
   width: 100%;
   height: calc(100vh - 160px);
   overflow: hidden;
-  background-color: rgb(252,252,252);
+  background-color: rgb(240,240,240);
 }
 
 /* 絶対位置で中心に */
@@ -153,16 +153,13 @@ main.show{
 }
 
 .content-title{
+  margin-top:7.0rem;
   margin-bottom:5.0rem;
   font-size: 2.8rem;
   font-weight: 200;
   font-family: 'Raleway', sans-serif;
 }
 
-.service,
-.works {
-  margin-top:100px;
-}
 
 
 .intro-contents {
@@ -172,7 +169,7 @@ main.show{
   font-weight: 300;
 }
 
-.intro-contents p {
+.intro-under {
   margin-top:2.2rem;
 
 }
@@ -199,16 +196,31 @@ main.show{
 }
 
 .service-image {
-  width:100%;
+  width:80%;
   height:auto;
+  margin: auto;
+  opacity: 0.75;
 }
 
-.application-explanation h3{
+.service-explanation h3{
     text-align: center;
     font-size: 1.4rem;
     font-family: 'Raleway', sans-serif;
-    font-weight: 300;
-    letter-spacing: 2.5px;
+    font-weight: 400;
+    opacity: 0.8;
+    letter-spacing: 1.4px;
+    color: #333; 
+}
+
+.service-explanation p{
+    margin-top:0.8rem;
+    margin-bottom:1.4rem;
+    text-align: center;
+    font-size: 1.0rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    opacity: 0.7;
+    letter-spacing: 1.0px;
     color: #333; 
 }
 
