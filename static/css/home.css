@@ -147,7 +147,7 @@ main.show{
 .service,
 .works {
     margin: auto;
-    width:65%;
+    width:50%;
     /* position: relative; */
     /* z-index: 1; */
 }
@@ -194,17 +194,30 @@ main.show{
 .service-contents {
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  gap:35px;
+  gap:70px;
   justify-content: center;
 }
 
+.service-image {
+  width:100%;
+  height:auto;
+}
+
+.application-explanation h3{
+    text-align: center;
+    font-size: 1.4rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    letter-spacing: 2.5px;
+    color: #333; 
+}
 
 
 /* 各々の作ったものの紹介部分 */
 .grid-application {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap:35px;
+    gap:50px;
 }
 
 /* 各々のアプリやポートフォリオ部分 */
@@ -225,9 +238,25 @@ main.show{
     border: rgb(180, 180, 180) solid 1px;
 }
 
+@media (max-width:1400px) {
+  .introduction,
+  .service,
+  .works {
+      margin: auto;
+      width:75%;
+      /* position: relative; */
+      /* z-index: 1; */
+  }
+
+}
 
 
 @media (max-width:1020px) {
+
+    .title-area {
+      height: calc(100vh - 170px);
+      background-color: #fff;
+    }
     .titlebox{
         width:100%;
     }
@@ -246,12 +275,9 @@ main.show{
     .introduction,
     .service,
     .works {
-      width:92%;
+      width:95%;
     }
-    .grid-application {
-        grid-template-columns: repeat(3,1fr);
-        gap:25px;
-    }
+
 }
 
 
@@ -277,6 +303,21 @@ main.show{
   .title-img {
       width:clamp(22.0vw,28vw,32vw);
   }
+  .service-image{
+    width:30%;
+  }
+  .service-contents {
+    grid-template-columns: repeat(1,1fr);
+    gap:20px;
+  }
+
+  .works {
+      width:40%;
+  }
+  .grid-application {
+      grid-template-columns: repeat(1,1fr);
+      gap:20px;
+  }
 }
 
 
@@ -294,10 +335,7 @@ main.show{
     .works {
       width:60%;
     }
-    .grid-application {
-        grid-template-columns: repeat(1,1fr);
-        gap:20px;
-    }
+
     .title span{
       font-size: clamp(0.8rem,6.0vw,6.5rem);
     }
